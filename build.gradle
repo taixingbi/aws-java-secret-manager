@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'checkstyle'
+    id 'com.github.davidmc24.gradle.plugin.avro' version '1.2.1'
+}
+
+checkstyle {
+    toolVersion '8.29'
+    maxWarnings = 0
+    ignoreFailures false
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'software.amazon.awssdk:secretsmanager:2.17.81'
+    implementation 'com.google.code.gson:gson:2.8.8'
+}
+
+group = 'com.saks'
+version = '1.0'
+description = 'FTPS upload an image to BOX'
+java.sourceCompatibility = JavaVersion.VERSION_11
